@@ -1,112 +1,261 @@
 /* css/write.css */
+
+/* ─── Page wrapper ─────────────────────────────────────────────────────────── */
+.write-page {
+  background  : var(--bg-primary);
+  min-height  : 100vh;
+  padding     : 32px 16px 80px;
+}
+
+/* ─── Editor container ─────────────────────────────────────────────────────── */
 .editor-container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: var(--bg-secondary);
-    padding: 40px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
+  max-width    : 800px;
+  margin       : 0 auto;
+  background   : var(--bg-secondary);
+  padding      : 40px;
+  border-radius: var(--radius-lg);
+  border       : 1px solid var(--border-color);
+  box-shadow   : var(--shadow-sm);
 }
 
-/* Title Input */
+/* ─── Cover image URL input ────────────────────────────────────────────────── */
+.cover-input-wrap {
+  margin-bottom : 20px;
+}
+
+.cover-preview {
+  width         : 100%;
+  max-height    : 240px;
+  object-fit    : cover;
+  border-radius : var(--radius-md);
+  margin-bottom : 12px;
+  display       : none;   /* shown by JS when URL is valid */
+  border        : 1px solid var(--border-color);
+}
+.cover-preview.visible { display: block; }
+
+/* ─── Title input ──────────────────────────────────────────────────────────── */
 .title-input {
-    width: 100%;
-    font-size: 2.5rem;
-    font-family: var(--font-serif);
-    font-weight: 700;
-    color: var(--text-primary);
-    border: none;
-    outline: none;
-    background: transparent;
-    margin-bottom: 20px;
+  width        : 100%;
+  font-size    : clamp(1.6rem, 4vw, 2.4rem);
+  font-family  : var(--font-serif);
+  font-weight  : 700;
+  color        : var(--text-primary);
+  border       : none;
+  outline      : none;
+  background   : transparent;
+  margin-bottom: 16px;
+  line-height  : 1.3;
+  resize       : none;           /* if using textarea */
+}
+.title-input::placeholder { color: var(--text-tertiary); }
+
+/* ─── Tags input ───────────────────────────────────────────────────────────── */
+.tags-input-wrap {
+  display       : flex;
+  align-items   : center;
+  gap           : 8px;
+  flex-wrap     : wrap;
+  margin-bottom : 16px;
+  padding       : 8px 0;
+  border-bottom : 1px dashed var(--border-color);
 }
 
-.title-input::placeholder {
-    color: #9CA3AF;
-}
+.tags-input-wrap i { color: var(--text-tertiary); font-size: 1rem; }
 
-/* Toolbar */
+#article-tags {
+  flex          : 1;
+  min-width     : 180px;
+  border        : none;
+  outline       : none;
+  background    : transparent;
+  color         : var(--text-primary);
+  font-size     : 0.9rem;
+  font-family   : var(--font-sans);
+}
+#article-tags::placeholder { color: var(--text-tertiary); }
+
+/* ─── Toolbar ──────────────────────────────────────────────────────────────── */
+:root { --navbar-height: 70px; }
+
 .editor-toolbar {
-    display: flex;
-    gap: 10px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 70px; /* Stays visible when scrolling */
-    background: var(--bg-secondary);
-    z-index: 10;
+  display      : flex;
+  gap          : 4px;
+  flex-wrap    : wrap;
+  padding-bottom: 12px;
+  margin-bottom : 20px;
+  border-bottom : 1px solid var(--border-color);
+  position     : sticky;
+  top          : var(--navbar-height);
+  background   : var(--bg-secondary);
+  z-index      : 10;
 }
 
 .toolbar-btn {
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 8px;
-    border-radius: var(--radius-md);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background   : transparent;
+  border       : none;
+  font-size    : 1.1rem;
+  color        : var(--text-secondary);
+  cursor       : pointer;
+  padding      : 7px 9px;
+  border-radius: var(--radius-md);
+  transition   : var(--transition);
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  min-width    : 36px;
 }
-
 .toolbar-btn:hover {
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--accent-color);
+  background   : var(--accent-light);   /* CSS variable — dark mode safe */
+  color        : var(--accent-color);
+}
+.toolbar-btn.active {
+  background   : var(--accent-light);
+  color        : var(--accent-color);
 }
 
-/* Content Editable Area */
+/* Toolbar group separator */
+.toolbar-sep {
+  width        : 1px;
+  background   : var(--border-color);
+  margin       : 4px 4px;
+  align-self   : stretch;
+}
+
+/* ─── Content editable area ────────────────────────────────────────────────── */
 .content-area {
-    min-height: 400px;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-primary);
-    outline: none;
-    font-family: var(--font-sans);
+  min-height   : 420px;
+  font-size    : clamp(1rem, 2vw, 1.15rem);
+  line-height  : 1.85;
+  color        : var(--text-primary);
+  outline      : none;
+  font-family  : var(--font-sans);
+  caret-color  : var(--accent-color);
 }
 
-.content-area[placeholder]:empty:before {
-    content: attr(placeholder);
-    color: #9CA3AF;
-    pointer-events: none;
-    display: block; /* For Firefox */
+/* Placeholder for contenteditable */
+.content-area[placeholder]:empty::before {
+  content       : attr(placeholder);
+  color         : var(--text-tertiary);
+  pointer-events: none;
+  display       : block;
 }
 
-/* Action Buttons */
+/* Inline elements inside editor */
+.content-area b, .content-area strong { font-weight: 700; }
+.content-area i, .content-area em     { font-style: italic; }
+.content-area u                        { text-decoration: underline; }
+.content-area a                        { color: var(--accent-color); }
+
+.content-area blockquote {
+  border-left  : 4px solid var(--accent-color);
+  background   : var(--accent-light);
+  padding      : 12px 16px;
+  margin       : 20px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color        : var(--text-secondary);
+  font-style   : italic;
+}
+
+.content-area h1, .content-area h2, .content-area h3 {
+  font-family  : var(--font-sans);
+  font-weight  : 700;
+  margin       : 1.2em 0 0.5em;
+  color        : var(--text-primary);
+}
+
+/* ─── Editor stats bar ─────────────────────────────────────────────────────── */
+.editor-stats {
+  display      : flex;
+  align-items  : center;
+  gap          : 16px;
+  font-size    : 0.82rem;
+  color        : var(--text-secondary);
+  margin-top   : 10px;
+  padding-top  : 10px;
+  border-top   : 1px dashed var(--border-color);
+  flex-wrap    : wrap;
+}
+
+#save-status {
+  margin-left  : auto;
+  opacity      : 0;
+  transition   : opacity 0.3s ease;
+  display      : flex;
+  align-items  : center;
+  gap          : 4px;
+}
+
+/* ─── Action buttons row ───────────────────────────────────────────────────── */
 .editor-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
+  display      : flex;
+  justify-content: flex-end;
+  align-items  : center;
+  gap          : 12px;
+  margin-top   : 28px;
+  padding-top  : 20px;
+  border-top   : 1px solid var(--border-color);
+  flex-wrap    : wrap;
 }
 
-.btn-publish {
-    background: var(--accent-color);
-    color: white;
-    padding: 10px 24px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: var(--transition);
+/*
+ * Publish button reuses .btn-primary from style.css
+ * with a pill shape override for the editor context.
+ */
+#publish-btn {
+  border-radius: 999px;
+  padding      : 10px 28px;
+  font-size    : 0.95rem;
 }
 
-.btn-publish:hover {
-    background: var(--accent-hover);
+/* ─── Draft restore banner ─────────────────────────────────────────────────── */
+.draft-restore-banner {
+  display      : flex;
+  align-items  : center;
+  justify-content: space-between;
+  gap          : 12px;
+  background   : var(--color-info-bg);
+  border       : 1px solid var(--color-info);
+  border-radius: var(--radius-md);
+  padding      : 10px 16px;
+  margin-bottom: 20px;
+  font-size    : 0.875rem;
+  color        : var(--color-info);
 }
-/* Toast notification */
-.write-toast           { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 12px 24px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 500; z-index: 9999; transition: opacity 0.4s; pointer-events: none; }
-.write-toast--error    { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; }
-.write-toast--success  { background: #F0FDF4; color: #16A34A; border: 1px solid #BBF7D0; }
-.write-toast--info     { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); }
+.draft-restore-banner button {
+  background   : none;
+  border       : none;
+  color        : var(--color-info);
+  cursor       : pointer;
+  font-size    : 1rem;
+  padding      : 0 4px;
+}
 
-/* Word count bar */
-.editor-stats          { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-secondary); margin-top: 8px; }
+/* ─── Edit mode indicator ──────────────────────────────────────────────────── */
+.edit-mode-badge {
+  display      : inline-flex;
+  align-items  : center;
+  gap          : 6px;
+  background   : var(--color-warning-bg);
+  color        : var(--color-warning);
+  border       : 1px solid var(--color-warning);
+  border-radius: 999px;
+  padding      : 3px 12px;
+  font-size    : 0.78rem;
+  font-weight  : 600;
+  margin-bottom: 16px;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .editor-container { padding: 24px 16px; }
+  .editor-toolbar   { top: 60px; gap: 2px; }
+  .toolbar-btn      { padding: 6px 7px; font-size: 1rem; }
+  .editor-actions   { justify-content: stretch; }
+  .editor-actions > * { flex: 1; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .write-page       { padding: 16px 8px 60px; }
+  .editor-stats     { gap: 10px; font-size: 0.78rem; }
+}
