@@ -102,3 +102,11 @@
 .btn-publish:hover {
     background: var(--accent-hover);
 }
+/* Toast notification */
+.write-toast           { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 12px 24px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 500; z-index: 9999; transition: opacity 0.4s; pointer-events: none; }
+.write-toast--error    { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; }
+.write-toast--success  { background: #F0FDF4; color: #16A34A; border: 1px solid #BBF7D0; }
+.write-toast--info     { background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); }
+
+/* Word count bar */
+.editor-stats          { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-secondary); margin-top: 8px; }
