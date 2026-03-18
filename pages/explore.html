@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css"> <link rel="stylesheet" href="../css/explore.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        
+        <div class="explore-header">
+            <h1>Explore ReadVerse</h1>
+            <p style="color: var(--text-secondary);">Discover inspiring articles, stories, and expertise.</p>
+        </div>
+
+        <div class="search-container">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" class="search-input" placeholder="Search by title, author, or keywords...">
+        </div>
+
+        <div class="category-chips">
+            <a href="#" class="chip active"><i class="ph ph-fire"></i> Trending</a>
+            <a href="#" class="chip"><i class="ph ph-cpu"></i> Technology</a>
+            <a href="#" class="chip"><i class="ph ph-heartbeat"></i> Lifestyle</a>
+            <a href="#" class="chip"><i class="ph ph-book-open"></i> Fiction</a>
+            <a href="#" class="chip"><i class="ph ph-code"></i> Programming</a>
+            <a href="#" class="chip"><i class="ph ph-chart-line-up"></i> Business</a>
+        </div>
+
+        <h3 style="margin-bottom: 20px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;">
+            <i class="ph ph-list-dashes"></i> Browse Results
+        </h3>
+        
+        <div id="search-results-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px;">
+            <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
+                <div class="skeleton" style="height: 24px; width: 90%; margin-bottom: 10px;"></div>
+                <div class="skeleton" style="height: 15px; width: 30%;"></div>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
+                <div class="skeleton" style="height: 24px; width: 90%; margin-bottom: 10px;"></div>
+                <div class="skeleton" style="height: 15px; width: 30%;"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../js/components.js"></script>
+</body>
+</html>
