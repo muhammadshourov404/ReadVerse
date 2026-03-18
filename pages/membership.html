@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container pricing-container">
+        
+        <div class="leaderboard-header" style="margin-top: 40px;">
+            <h1>Support great writing.</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Upgrade to ReadVerse Pro to get unlimited access to the best stories and support the authors you love.</p>
+        </div>
+
+        <div class="pricing-grid">
+            
+            <div class="pricing-card">
+                <div class="plan-name">Reader</div>
+                <div class="plan-price">$0<span>/forever</span></div>
+                
+                <ul class="feature-list">
+                    <li><i class="ph ph-check-circle"></i> Read up to 5 premium stories/month</li>
+                    <li><i class="ph ph-check-circle"></i> Publish your own articles</li>
+                    <li><i class="ph ph-check-circle"></i> Basic reading statistics</li>
+                    <li><i class="ph ph-x-circle"></i> Ads on articles</li>
+                    <li><i class="ph ph-x-circle"></i> Custom domain for profile</li>
+                </ul>
+                
+                <a href="signup.html" id="basic-plan-btn" class="btn-plan btn-basic">Current Plan</a>
+            </div>
+
+            <div class="pricing-card pro">
+                <div class="pro-badge">RECOMMENDED</div>
+                <div class="plan-name">ReadVerse Pro</div>
+                <div class="plan-price">$5<span>/month</span></div>
+                
+                <ul class="feature-list">
+                    <li><i class="ph ph-check-circle"></i> Unlimited ad-free reading</li>
+                    <li><i class="ph ph-check-circle"></i> Support writers directly</li>
+                    <li><i class="ph ph-check-circle"></i> Advanced analytics dashboard</li>
+                    <li><i class="ph ph-check-circle"></i> High-res image uploads</li>
+                    <li><i class="ph ph-check-circle"></i> Custom profile domain</li>
+                </ul>
+                
+                <button id="upgrade-pro-btn" class="btn-plan btn-pro" style="width: 100%; border: none; font-family: inherit;">Upgrade to Pro</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/components.js"></script>
+    <script type="module" src="../js/membership.js"></script>
+</body>
+</html>
