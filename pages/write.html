@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Article - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/write.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="editor-container">
+            
+            <input type="text" id="article-title" class="title-input" placeholder="Title of your story..." required>
+
+            <div class="editor-toolbar" id="editor-toolbar">
+                <button class="toolbar-btn format-btn" data-command="bold" title="Bold"><i class="ph ph-text-b"></i></button>
+                <button class="toolbar-btn format-btn" data-command="italic" title="Italic"><i class="ph ph-text-italic"></i></button>
+                <button class="toolbar-btn format-btn" data-command="underline" title="Underline"><i class="ph ph-text-underline"></i></button>
+                
+                <div style="width: 1px; background: var(--border-color); margin: 0 5px;"></div>
+                
+                <button class="toolbar-btn format-btn" data-command="insertUnorderedList" title="Bullet List"><i class="ph ph-list-bullets"></i></button>
+                <button class="toolbar-btn format-btn" data-command="insertOrderedList" title="Numbered List"><i class="ph ph-list-numbers"></i></button>
+                <button class="toolbar-btn format-btn" data-command="formatBlock" data-value="BLOCKQUOTE" title="Quote"><i class="ph ph-quotes"></i></button>
+                
+                <div style="width: 1px; background: var(--border-color); margin: 0 5px;"></div>
+                
+                <label for="image-upload" class="toolbar-btn" title="Upload Image" style="cursor: pointer;">
+                    <i class="ph ph-image"></i>
+                </label>
+                <input type="file" id="image-upload" accept="image/*" style="display: none;">
+            </div>
+
+            <div id="article-content" class="content-area" contenteditable="true" placeholder="Tell your story... Type here."></div>
+
+            <div class="editor-actions" style="display: flex; justify-content: space-between; align-items: center;">
+                <span id="save-status" style="color: var(--text-secondary); font-size: 0.9rem; font-style: italic; opacity: 0; transition: opacity 0.3s;">Draft saving...</span>
+                
+                <button id="publish-btn" class="btn-publish">
+                    <i class="ph ph-paper-plane-right"></i> Publish Now
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/components.js"></script>
+    <script type="module" src="../js/write.js"></script>
+</body>
+</html>
