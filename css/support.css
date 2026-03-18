@@ -1,0 +1,112 @@
+/* css/support.css */
+.support-header {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.support-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.support-header p {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Page Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.contact-info {
+    background: var(--text-primary);
+    color: white;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-item i {
+    font-size: 1.8rem;
+    color: #818CF8; /* Lighter indigo for dark background */
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.info-item p {
+    color: #9CA3AF;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-form-wrapper {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+/* Help Center FAQ Accordion */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: 15px;
+    background: var(--bg-secondary);
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--accent-color);
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    display: none; /* Hidden by default */
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
