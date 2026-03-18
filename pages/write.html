@@ -4,7 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Write Article - ReadVerse</title>
-    
+    <div class="write-page">
+  <div class="editor-container">
+
+    <!-- Edit mode badge (write.js দেখাবে/লুকাবে) -->
+    <div class="edit-mode-badge" id="edit-mode-badge" style="display:none">
+      <i class="ph ph-pencil"></i> Editing article
+    </div>
+
+    <!-- Draft restore banner (write.js inject করবে) -->
+    <div id="draft-restore-banner"></div>
+
+    <!-- Cover image preview -->
+    <div class="cover-input-wrap">
+      <img id="cover-preview" class="cover-preview" alt="Cover preview"/>
+      <input type="url" id="cover-image-url"
+             placeholder="Cover image URL (optional)"
+             class="form-input"
+             oninput="
+               const img = document.getElementById('cover-preview');
+               if(this.value) { img.src=this.value; img.classList.add('visible'); }
+               else { img.classList.remove('visible'); }
+             "/>
+    </div>
+
+    <!-- Title -->
+    <input type="text" id="article-title"
+           class="title-input"
+           placeholder="Your article title…"
+           maxlength="150"
+           autocomplete="off"/>
+
+    <!-- Tags -->
+    <div class="tags-input-wrap">
+      <i class="ph ph-tag"></i>
+      <input type="text" id="article-tags"
+             placeholder="Add tags: technology, science  (comma separated)"/>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="editor-toolbar">
+      <button class="toolbar-btn" data-command="bold"        title="Bold">        <i class="ph ph-text-b"></i></button>
+      <button class="toolbar-btn" data-command="italic"      title="Italic">      <i class="ph ph-text-italic"></i></button>
+      <button class="toolbar-btn" data-command="underline"   title="Underline">   <i class="ph ph-text-underline"></i></button>
+      <button class="toolbar-btn" data-command="strikeThrough" title="Strikethrough"><i class="ph ph-text-strikethrough"></i></button>
+      <div class="toolbar-sep"></div>
+      <button class="toolbar-btn" data-command="formatBlock" data-value="h2"      title="Heading 2"><i class="ph ph-text-h-two"></i></button>
+      <button class="toolbar-btn" data-command="formatBlock" data-value="h3"      title="Heading 3"><i class="ph ph-text-h-three"></i></button>
+      <button class="toolbar-btn" data-command="formatBlock" data-value="blockquote" title="Quote"><i class="ph ph-quotes"></i></button>
+      <div class="toolbar-sep"></div>
+      <button class="toolbar-btn" data-command="insertUnorderedList" title="Bullet list"><i class="ph ph-list-bullets"></i></button>
+      <button class="toolbar-btn" data-command="insertOrderedList"   title="Numbered list"><i class="ph ph-list-numbers"></i></button>
+      <div class="toolbar-sep"></div>
+      <button class="toolbar-btn" data-command="createLink"  title="Insert link"  id="link-btn"><i class="ph ph-link"></i></button>
+      <button class="toolbar-btn" data-command="removeFormat" title="Clear format"><i class="ph ph-text-t"></i></button>
+    </div>
+
+    <!-- Editor area -->
+    <div id="article-content"
+         class="content-area"
+         contenteditable="true"
+         placeholder="Start writing your story…"></div>
+
+    <!-- Stats bar -->
+    <div class="editor-stats">
+      <span id="word-count">0 words</span>
+      <span>·</span>
+      <span id="read-time">1 min read</span>
+      <span id="save-status">
+        <i class="ph ph-check-circle"></i> Draft saved
+      </span>
+    </div>
+
+    <!-- Actions -->
+    <div class="editor-actions">
+      <a href="../pages/dashboard.html" class="btn-secondary">
+        <i class="ph ph-x"></i> Cancel
+      </a>
+      <button id="publish-btn" class="btn-primary">
+        <i class="ph ph-paper-plane-tilt"></i> Publish
+      </button>
+    </div>
+
+  </div>
+</div>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <link rel="stylesheet" href="../css/style.css">
