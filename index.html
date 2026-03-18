@@ -1,68 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadVerse - Premium Reading Hub</title>
-    
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#4F46E5">
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReadVerse — Read. Write. Inspire.</title>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/home.css"/>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
-    <div id="navbar-placeholder"></div>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
 
-    <main class="container" style="margin-top: 40px;">
-        
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 60px;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 15px; font-family: var(--font-serif); color: var(--text-primary);">Discover stories, thinking, and expertise.</h1>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">ReadVerse is a minimalist platform for readers and writers. No distractions, just pure content.</p>
-            <a href="pages/signup.html" style="background: var(--text-primary); color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: var(--transition);">Start Reading</a>
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <i class="ph ph-sparkle"></i> A place for curious minds
+      </div>
+      <h1 class="hero-title">
+        Where great ideas <span>find their words</span>
+      </h1>
+      <p class="hero-subtitle">
+        Discover thoughtful articles from writers around the world.
+        Read deeply. Write boldly.
+      </p>
+      <div class="hero-actions">
+        <a href="./pages/explore.html" class="btn-primary">
+          <i class="ph ph-compass"></i> Start Exploring
+        </a>
+        <a href="./pages/write.html" class="btn-secondary">
+          <i class="ph ph-pen-nib"></i> Start Writing
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <h3 style="margin-bottom: 20px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;">
-            <i class="ph ph-trend-up"></i> Trending Now
-        </h3>
-        
-        <div id="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
-            <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
-                <div class="skeleton" style="height: 24px; width: 90%; margin-bottom: 10px;"></div>
-                <div class="skeleton" style="height: 24px; width: 70%; margin-bottom: 20px;"></div>
-                <div class="skeleton" style="height: 15px; width: 30%;"></div>
-            </div>
-            <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
-                <div class="skeleton" style="height: 24px; width: 80%; margin-bottom: 10px;"></div>
-                <div class="skeleton" style="height: 24px; width: 60%; margin-bottom: 20px;"></div>
-                <div class="skeleton" style="height: 15px; width: 30%;"></div>
-            </div>
-        </div>
-<button id="load-more-btn" class="btn-secondary" style="margin: 32px auto; display: block;">
-  Load More <i class="ph ph-arrow-down"></i>
-</button>
-    </main>
+  <!-- Main content -->
+  <main class="container home-articles-wrap">
 
-    <script src="js/components.js"></script>
-    <script type="module" src="js/app.js"></script>
+    <!-- Trending topics strip -->
+    <div class="home-topics-strip" id="home-topics-strip">
+      <!-- Populated by topics.js or static tags -->
+      <a href="./pages/topics.html?topic=technology" class="tag">Technology</a>
+      <a href="./pages/topics.html?topic=science"    class="tag">Science</a>
+      <a href="./pages/topics.html?topic=health"     class="tag">Health</a>
+      <a href="./pages/topics.html?topic=programming"class="tag">Programming</a>
+      <a href="./pages/topics.html?topic=culture"    class="tag">Culture</a>
+      <a href="./pages/topics.html"                  class="tag">View All →</a>
+    </div>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    }, err => {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
-            });
-        }
-    </script>
+    <!-- Section header -->
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="ph ph-trend-up"></i> Latest Articles
+      </h2>
+      <a href="./pages/explore.html" class="section-link">
+        See all <i class="ph ph-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- Articles injected by app.js -->
+    <div id="articles-grid" class="articles-grid"></div>
+
+    <!-- Load More -->
+    <div class="load-more-wrap">
+      <button id="load-more-btn" class="btn-secondary">
+        Load More <i class="ph ph-arrow-down"></i>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="./js/components.js"></script>
+  <script type="module" src="./js/app.js"></script>
+
+  <!-- Apply saved theme on load -->
+  <script>
+    const t = localStorage.getItem('readverse_theme') || 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
 </body>
 </html>
