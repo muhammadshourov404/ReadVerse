@@ -1,0 +1,58 @@
+/* css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+    /* Premium Colors */
+    --bg-primary: #F9FAFB;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --accent-color: #4F46E5; /* Royal Indigo */
+    --accent-hover: #4338CA;
+    --border-color: #E5E7EB;
+
+    /* Typography */
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Lora', serif;
+
+    /* Utilities */
+    --transition: all 0.3s ease;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Skeleton Loading Animation */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.skeleton {
+    background: #e2e5e7;
+    background-image: linear-gradient(90deg, #e2e5e7 0px, #f3f4f6 40px, #e2e5e7 80px);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+    border-radius: var(--radius-md);
+}
+
+/* Base Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
