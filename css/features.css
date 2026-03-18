@@ -1,0 +1,124 @@
+/* css/features.css */
+
+/* --- Notifications Page --- */
+.notification-list {
+    max-width: 700px;
+    margin: 40px auto 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+    align-items: center;
+    text-decoration: none;
+}
+
+.notification-item:hover {
+    border-color: #D1D5DB;
+}
+
+/* Unread Notification Style */
+.notification-item.unread {
+    background: rgba(79, 70, 229, 0.02);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.notification-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Specific Icon Colors */
+.icon-like { background: rgba(220, 38, 38, 0.1); color: #DC2626; }
+.icon-follow { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+.icon-comment { background: rgba(79, 70, 229, 0.1); color: var(--accent-color); }
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-content p {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.notification-content span {
+    font-weight: 600;
+}
+
+.notification-time {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* --- Topics Page --- */
+.topics-header {
+    text-align: center;
+    padding: 50px 0 30px;
+}
+
+.topics-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.topic-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 35px 20px;
+    text-align: center;
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.topic-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.topic-card i {
+    font-size: 2.8rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.topic-card:hover i {
+    color: var(--accent-color);
+}
+
+.topic-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
