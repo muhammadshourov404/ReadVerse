@@ -115,3 +115,13 @@
 .auth-footer a:hover {
     text-decoration: underline;
 }
+.auth-error {
+  background : var(--color-danger-bg, #FEF2F2);
+  color      : var(--color-danger,    #DC2626);
+  border     : 1px solid var(--color-danger, #DC2626);
+  border-radius: var(--radius-md);
+  padding    : 10px 14px;
+  font-size  : 0.875rem;
+  margin-bottom: 12px;
+  display    : none;
+}
