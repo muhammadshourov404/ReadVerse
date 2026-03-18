@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/features.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        
+        <div style="max-width: 700px; margin: 40px auto 0; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+            <h1 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--text-primary);">Notifications</h1>
+            <button id="mark-all-read-btn" style="background: none; border: none; color: var(--accent-color); font-weight: 500; cursor: pointer; transition: var(--transition);">Mark all as read</button>
+        </div>
+
+        <div class="notification-list" id="realtime-notifications-list">
+            
+            <div class="notification-item" style="pointer-events: none; border-color: transparent;">
+                <div class="skeleton" style="width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;"></div>
+                <div class="notification-content" style="width: 100%;">
+                    <div class="skeleton" style="height: 18px; width: 80%; margin-bottom: 10px;"></div>
+                    <div class="skeleton" style="height: 14px; width: 30%;"></div>
+                </div>
+            </div>
+
+            <div class="notification-item" style="pointer-events: none; border-color: transparent;">
+                <div class="skeleton" style="width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;"></div>
+                <div class="notification-content" style="width: 100%;">
+                    <div class="skeleton" style="height: 18px; width: 60%; margin-bottom: 10px;"></div>
+                    <div class="skeleton" style="height: 14px; width: 40%;"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/components.js"></script>
+    <script type="module" src="../js/notifications.js"></script>
+</body>
+</html>
