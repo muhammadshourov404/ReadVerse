@@ -10,6 +10,40 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/features.css">
 </head>
+    <div class="container topics-container">
+
+  <!-- Page header -->
+  <div class="topics-header">
+    <div>
+      <h2>Explore Topics</h2>
+      <p class="text-secondary">Follow topics to personalise your reading feed.</p>
+    </div>
+    <div class="topics-search-wrap">
+      <i class="ph ph-magnifying-glass"></i>
+      <input type="text" id="topics-search"
+             placeholder="Search topics…" class="form-input topics-search-input" />
+    </div>
+  </div>
+
+  <!-- Tab switcher -->
+  <div class="topics-tabs">
+    <button id="tab-all-topics" class="topics-tab active">All Topics</button>
+    <button id="tab-my-topics"  class="topics-tab">
+      My Topics
+      <span id="followed-topics-count" class="topics-tab-badge">0</span>
+    </button>
+  </div>
+
+  <!-- Topics grid -->
+  <div id="topics-grid" class="topics-grid"></div>
+
+  <!-- Filtered articles (hidden until a topic is clicked) -->
+  <section id="topic-articles-section" style="display:none; margin-top:40px;">
+    <h3 id="topic-articles-title" style="margin-bottom:20px;"></h3>
+    <div id="topic-articles" class="articles-grid"></div>
+  </section>
+
+</div>
 <body>
 
     <div id="navbar-placeholder"></div>
