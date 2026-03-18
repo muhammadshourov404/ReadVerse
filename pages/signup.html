@@ -1,72 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - ReadVerse</title>
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/auth.css">
-</head>
-<body>
+<!-- login.html -->
+<div class="auth-wrapper">
+  <div class="auth-card">
 
-    <div id="navbar-placeholder"></div>
+    <div class="auth-header">
+      <i class="ph ph-book-open-text auth-logo"></i>
+      <h2>Welcome back</h2>
+      <p>Sign in to continue reading and writing.</p>
+    </div>
 
-    <main class="auth-wrapper">
-        <div class="auth-card">
-            <div class="auth-header">
-                <h2>Join ReadVerse</h2>
-                <p>Create an account to start writing and reading.</p>
-            </div>
+    <!-- Google Sign-In -->
+    <button type="button" class="google-signin-btn">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"/>
+      Continue with Google
+    </button>
 
-            <form id="signup-form">
-                <div class="input-group">
-                    <label>Full Name</label>
-                    <div class="input-wrapper">
-                        <i class="ph ph-user"></i>
-                        <input type="text" id="fullname" placeholder="John Doe" required>
-                    </div>
-                </div>
+    <div class="auth-divider">or</div>
 
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <div class="input-wrapper">
-                        <i class="ph ph-envelope-simple"></i>
-                        <input type="email" id="email" placeholder="you@example.com" required>
-                    </div>
-                </div>
+    <!-- Email form -->
+    <form id="login-form">
+      <p class="auth-error"></p>
 
-                <div class="input-group">
-                    <label>Password</label>
-                    <div class="input-wrapper">
-                        <i class="ph ph-lock-key"></i>
-                        <input type="password" id="password" placeholder="••••••••" required minlength="6">
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-primary">
-                    <i class="ph ph-user-plus"></i> Create Account
-                </button>
-            </form>
-
-            <div class="auth-footer">
-                Already have an account? <a href="login.html">Sign In</a>
-            </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <i class="ph ph-envelope"></i>
+          <input type="email" id="email" placeholder="you@example.com" required/>
         </div>
-    </main>
-<!-- Confirm password field (signup.html only) -->
-<input type="password" id="confirm-password" placeholder="Confirm Password" required />
+      </div>
 
-<!-- Google button (উভয় page-এ) -->
-<button type="button" class="google-signin-btn btn-outline">
-  <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-       width="18" alt="Google" />
-  Continue with Google
-</button>
-    <script src="../js/components.js"></script>
-    <script type="module" src="../js/auth.js"></script>
-    
-</body>
-</html>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <i class="ph ph-lock"></i>
+          <input type="password" id="password" placeholder="Your password" required/>
+          <button type="button" class="toggle-password"
+                  onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; this.querySelector('i').classList.toggle('ph-eye'); this.querySelector('i').classList.toggle('ph-eye-slash');">
+            <i class="ph ph-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <a href="./forgot-password.html" class="auth-forgot">Forgot password?</a>
+
+      <button type="submit" class="btn-primary">
+        <i class="ph ph-sign-in"></i> Sign In
+      </button>
+    </form>
+
+    <p class="auth-footer">
+      Don't have an account? <a href="./signup.html">Sign up free</a>
+    </p>
+
+  </div>
+</div>
