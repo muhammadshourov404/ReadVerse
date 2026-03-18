@@ -1,71 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - ReadVerse</title>
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/settings.css">
-</head>
-<body>
+<div class="container settings-container">
 
-    <div id="navbar-placeholder"></div>
+  <!-- ① Profile Section -->
+  <section class="settings-section">
+    <h3>Profile</h3>
+    <div class="avatar-upload-row">
+      <img id="avatar-preview" src="" alt="Avatar" class="settings-avatar-preview" />
+      <div>
+        <label class="btn-outline btn-sm" for="avatar-file-input">
+          <i class="ph ph-upload-simple"></i> Change Photo
+        </label>
+        <input type="file" id="avatar-file-input" accept="image/*" style="display:none" />
+        <p class="text-secondary" style="font-size:0.8rem;margin-top:4px;">Max 2 MB · JPG, PNG, WebP</p>
+      </div>
+    </div>
+    <input type="text" id="settings-fullname" placeholder="Full Name" class="form-input" />
+    <textarea id="settings-bio" placeholder="Short bio (max 200 characters)" class="form-input" rows="3" maxlength="200"></textarea>
+    <button id="save-profile-btn" class="btn-primary">
+      <i class="ph ph-floppy-disk"></i> Save Profile
+    </button>
+  </section>
 
-    <main class="container settings-container">
-        
-        <aside class="settings-sidebar">
-            <ul class="settings-menu">
-                <li><a href="#" class="active"><i class="ph ph-user"></i> Account Info</a></li>
-                <li><a href="#"><i class="ph ph-palette"></i> Appearance</a></li>
-                <li><a href="#"><i class="ph ph-globe"></i> Language</a></li>
-                <li><a href="#"><i class="ph ph-bell"></i> Notifications</a></li>
-                <li><a href="#"><i class="ph ph-shield-check"></i> Security</a></li>
-            </ul>
-        </aside>
+  <!-- ② Email Section -->
+  <section class="settings-section">
+    <h3>Change Email</h3>
+    <input type="email"    id="settings-email"          placeholder="New Email Address" class="form-input" />
+    <input type="password" id="email-confirm-password"  placeholder="Current Password (required)" class="form-input" />
+    <button id="save-email-btn" class="btn-primary">
+      <i class="ph ph-envelope"></i> Update Email
+    </button>
+  </section>
 
-        <div class="settings-content">
-            <h2 class="settings-section-title">Account Information</h2>
-            
-            <form id="profile-settings-form">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="settings-name" placeholder="Loading your name...">
-                </div>
-                
-                <div class="form-group">
-                    <label>Bio</label>
-                    <textarea id="settings-bio" rows="4" placeholder="Loading your bio..."></textarea>
-                </div>
+  <!-- ③ Password Section -->
+  <section class="settings-section">
+    <h3>Change Password</h3>
+    <input type="password" id="current-password"      placeholder="Current Password"  class="form-input" />
+    <input type="password" id="new-password"          placeholder="New Password"       class="form-input" />
+    <input type="password" id="confirm-new-password"  placeholder="Confirm New Password" class="form-input" />
+    <button id="save-password-btn" class="btn-primary">
+      <i class="ph ph-lock-key"></i> Change Password
+    </button>
+  </section>
 
-                <h2 class="settings-section-title" style="margin-top: 40px;">Preferences</h2>
-                
-                <div class="form-group">
-                    <label>Interface Language</label>
-                    <select id="settings-language">
-                        <option value="en">English (US)</option>
-                        <option value="bn">Bengali (বাংলা)</option>
-                    </select>
-                </div>
+  <!-- ④ Appearance -->
+  <section class="settings-section">
+    <h3>Appearance</h3>
+    <div class="settings-row">
+      <label for="theme-toggle">Theme</label>
+      <select id="theme-toggle" class="form-input" style="max-width:180px;">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="system">System Default</option>
+      </select>
+    </div>
+  </section>
 
-                <div class="form-group">
-                    <label>Theme</label>
-                    <select id="settings-theme">
-                        <option value="light">Light Mode</option>
-                        <option value="dark">Dark Mode</option>
-                        <option value="system">System Default</option>
-                    </select>
-                </div>
+  <!-- ⑤ Notifications -->
+  <section class="settings-section">
+    <h3>Notifications</h3>
+    <div class="settings-row">
+      <label for="notif-email">Email notifications</label>
+      <input type="checkbox" id="notif-email" class="settings-checkbox" />
+    </div>
+    <div class="settings-row">
+      <label for="notif-push">Push notifications</label>
+      <input type="checkbox" id="notif-push" class="settings-checkbox" />
+    </div>
+    <button id="save-notif-btn" class="btn-primary">
+      <i class="ph ph-bell"></i> Save Preferences
+    </button>
+  </section>
 
-                <button type="submit" id="save-settings-btn" class="btn-save"><i class="ph ph-floppy-disk"></i> Save Changes</button>
-            </form>
-        </div>
+  <!-- ⑥ Danger Zone -->
+  <section class="settings-section settings-danger-zone">
+    <h3>Danger Zone</h3>
+    <p class="text-secondary">Permanently delete your account and all your articles. This cannot be undone.</p>
+    <button id="delete-account-btn" class="btn-danger" style="padding:10px 20px;border-radius:var(--radius-md);cursor:pointer;font-weight:500;">
+      <i class="ph ph-trash"></i> Delete My Account
+    </button>
+  </section>
 
-    </main>
-
-    <script src="../js/components.js"></script>
-    <script type="module" src="../js/settings.js"></script>
-</body>
-</html>
+</div>
