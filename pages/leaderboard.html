@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/premium.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container leaderboard-container">
+        
+        <div class="leaderboard-header">
+            <h1>Top Creators</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">The most read and loved authors this month.</p>
+        </div>
+
+        <div class="leaderboard-list" id="realtime-leaderboard">
+            
+            <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: 15px;">
+                <div class="skeleton" style="height: 30px; width: 100%; margin-bottom: 10px;"></div>
+                <div class="skeleton" style="height: 30px; width: 80%;"></div>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                <div class="skeleton" style="height: 30px; width: 100%; margin-bottom: 10px;"></div>
+                <div class="skeleton" style="height: 30px; width: 70%;"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/components.js"></script>
+    <script type="module" src="../js/leaderboard.js"></script>
+</body>
+</html>
