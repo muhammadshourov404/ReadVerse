@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/explore.css"> <link rel="stylesheet" href="../css/support.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        
+        <div class="support-header">
+            <h1>How can we help you?</h1>
+            
+            <div class="search-container" style="margin-top: 30px;">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" class="search-input" placeholder="Search for articles, guides, or FAQs...">
+            </div>
+        </div>
+
+        <div class="faq-container">
+            <h3 style="margin-bottom: 25px; font-family: var(--font-serif); font-size: 1.8rem;">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How do I publish my first article? <i class="ph ph-caret-down"></i>
+                </div>
+                <div class="faq-answer">
+                    To publish an article, log in to your account and navigate to the 'Write' page from the top menu or your dashboard. Use our distraction-free editor to write your content, add formatting, and click the 'Publish Now' button when you're ready.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Is ReadVerse completely free to use? <i class="ph ph-caret-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! Creating an account, reading articles, and publishing your own stories are completely free. We may introduce premium features in the future, but the core reading and writing experience will always remain free.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How do I change my profile information? <i class="ph ph-caret-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You can update your profile information, including your name, bio, and preferences, by going to the 'Settings' page from your dashboard menu. Don't forget to click 'Save Changes' after updating your details.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Can I delete an article after publishing? <i class="ph ph-caret-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Currently, you can manage your articles from the dashboard. The delete feature is being rolled out in our next update. For immediate removal, please contact our support team.
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/components.js"></script>
+    
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.classList.replace('ph-caret-up', 'ph-caret-down');
+            } else {
+                answer.style.display = "block";
+                icon.classList.replace('ph-caret-down', 'ph-caret-up');
+            }
+        }
+    </script>
+</body>
+</html>
