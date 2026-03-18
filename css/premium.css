@@ -1,0 +1,210 @@
+/* css/premium.css */
+
+/* --- Leaderboard Page --- */
+.leaderboard-container {
+    max-width: 800px;
+    margin: 40px auto 60px;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.leaderboard-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin-bottom: 15px;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.rank-item:hover {
+    transform: translateX(8px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.rank-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    width: 50px;
+    color: var(--text-secondary);
+    font-family: var(--font-serif);
+}
+
+/* Top 3 Ranks Colors */
+.rank-1 .rank-number { color: #F59E0B; } /* Gold */
+.rank-2 .rank-number { color: #9CA3AF; } /* Silver */
+.rank-3 .rank-number { color: #D97706; } /* Bronze */
+
+.rank-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.rank-user i {
+    font-size: 2.8rem;
+    color: var(--text-secondary);
+}
+
+.rank-info h3 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+}
+
+.rank-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.rank-score {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Membership Page --- */
+.pricing-container {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.pricing-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card.pro {
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 35px rgba(79, 70, 229, 0.1);
+}
+
+.pro-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.plan-name {
+    font-size: 1.6rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.plan-price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-family: var(--font-sans);
+}
+
+.plan-price span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.feature-list i {
+    color: #10B981;
+    font-size: 1.3rem;
+}
+
+.feature-list i.ph-x-circle {
+    color: #EF4444;
+}
+
+.btn-plan {
+    width: 100%;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-basic {
+    background: transparent;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+}
+
+.btn-basic:hover {
+    background: var(--text-primary);
+    color: white;
+}
+
+.btn-pro {
+    background: var(--accent-color);
+    border: none;
+    color: white;
+}
+
+.btn-pro:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
