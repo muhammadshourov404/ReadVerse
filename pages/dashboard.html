@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <div class="container dashboard-container">
+        
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="ph ph-squares-four"></i> Overview</a></li>
+                <li><a href="write.html"><i class="ph ph-pen-nib"></i> Write Article</a></li>
+                <li><a href="#"><i class="ph ph-files"></i> My Articles</a></li>
+                <li><a href="bookmarks.html"><i class="ph ph-bookmark-simple"></i> Bookmarks</a></li>
+                <li><a href="settings.html"><i class="ph ph-gear"></i> Settings</a></li>
+                <li><a href="#" id="logout-btn" style="color: #DC2626;"><i class="ph ph-sign-out"></i> Log Out</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            
+            <div class="welcome-banner" id="welcome-section">
+                <div>
+                    <div class="skeleton" style="height: 32px; width: 250px; margin-bottom: 10px; background-image: linear-gradient(90deg, #4B5563 0px, #6B7280 40px, #4B5563 80px);"></div>
+                    <div class="skeleton" style="height: 16px; width: 180px; background-image: linear-gradient(90deg, #4B5563 0px, #6B7280 40px, #4B5563 80px);"></div>
+                </div>
+                <i class="ph ph-rocket-launch" style="font-size: 3rem; opacity: 0.8;"></i>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="ph ph-article"></i></div>
+                    <div class="stat-details">
+                        <h3>0</h3>
+                        <p>Total Published</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="ph ph-eye"></i></div>
+                    <div class="stat-details">
+                        <h3>0</h3>
+                        <p>Total Views</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="ph ph-heart"></i></div>
+                    <div class="stat-details">
+                        <h3>0</h3>
+                        <p>Total Likes</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../js/components.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
+</body>
+</html>
