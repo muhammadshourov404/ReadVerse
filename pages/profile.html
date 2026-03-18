@@ -51,7 +51,23 @@
         </div>
 
     </main>
+<!-- Profile page structure -->
+<div class="container" style="max-width: 780px; margin: 40px auto; padding: 0 16px;">
 
+  <!-- Header: avatar + name + bio + follow button -->
+  <div id="profile-header" class="profile-header-wrap"></div>
+
+  <!-- Stats row -->
+  <div id="profile-stats"
+       class="stats-grid"
+       style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0;">
+  </div>
+
+  <!-- Articles -->
+  <h3 style="margin-bottom:16px;">Articles</h3>
+  <div id="profile-articles"></div>
+
+</div>
     <script src="../js/components.js"></script>
     <script type="module" src="../js/profile.js"></script>
 </body>
