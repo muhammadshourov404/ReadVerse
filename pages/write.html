@@ -11,7 +11,23 @@
     <link rel="stylesheet" href="../css/write.css">
 </head>
 <body>
+<!-- Tags input -->
+<input type="text" id="article-tags"
+       placeholder="Tags: technology, science, health  (comma separated, max 5)"
+       class="form-input" />
 
+<!-- Cover image URL -->
+<input type="url" id="cover-image-url"
+       placeholder="Cover image URL (optional)"
+       class="form-input" />
+
+<!-- Live stats bar -->
+<div class="editor-stats">
+  <span id="word-count">0 words</span>
+  <span>·</span>
+  <span id="read-time">1 min read</span>
+  <span id="save-status" style="margin-left:auto;opacity:0;transition:opacity 0.3s;"></span>
+</div>
     <div id="navbar-placeholder"></div>
 
     <main class="container">
