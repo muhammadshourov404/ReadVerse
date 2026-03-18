@@ -106,3 +106,28 @@
 .btn-outline         { background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); }
 .btn-danger          { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; }
 .btn-danger:hover    { background: #DC2626; color: white; }
+/* Profile header */
+.profile-header-wrap      { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; padding: 24px 0; border-bottom: 1px solid var(--border-color); }
+.profile-avatar-lg        { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border-color); }
+.profile-info             { flex: 1; min-width: 220px; }
+.profile-name-row         { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.profile-name             { font-size: 1.4rem; font-weight: 700; margin: 0; }
+.profile-bio              { color: var(--text-secondary); margin: 0 0 8px; line-height: 1.6; }
+.profile-joined           { font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+.profile-action-btn       { padding: 8px 20px; border-radius: var(--radius-md); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; text-decoration: none; cursor: pointer; border: none; font-weight: 500; }
+
+/* Follow button active state */
+.profile-action-btn.following { background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); }
+
+/* Article cards on profile */
+.profile-article-card     { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
+.profile-article-cover    { width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius-md); flex-shrink: 0; }
+.profile-article-body     { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.profile-article-meta     { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; margin-top: auto; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-article-cover  { display: none; }
+  .profile-header-wrap    { flex-direction: column; align-items: center; text-align: center; }
+  .profile-name-row       { justify-content: center; }
+}
