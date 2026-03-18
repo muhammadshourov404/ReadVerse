@@ -56,3 +56,35 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+/* Navbar base */
+.site-header        { background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+.navbar-inner       { display: flex; justify-content: space-between; align-items: center; }
+.nav-brand          { text-decoration: none; color: var(--text-primary); display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.2rem; }
+.nav-brand i        { color: var(--accent-color); font-size: 1.8rem; }
+.nav-links          { display: flex; gap: 20px; align-items: center; }
+.nav-link           { text-decoration: none; color: var(--text-secondary); display: flex; align-items: center; gap: 5px; font-weight: 500; transition: color 0.2s; }
+.nav-link:hover,
+.nav-link.active    { color: var(--accent-color); }
+.nav-icon           { font-size: 1.2rem; }
+.nav-cta            { background: var(--accent-color); color: white; padding: 8px 16px; border-radius: var(--radius-md); text-decoration: none; font-weight: 500; }
+
+/* Avatar + dropdown */
+.nav-profile-menu   { position: relative; }
+.nav-avatar         { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; cursor: pointer; border: 2px solid var(--border-color); }
+.nav-dropdown       { display: none; position: absolute; right: 0; top: 48px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); min-width: 180px; padding: 8px 0; box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+.nav-dropdown.open  { display: block; }
+.nav-dropdown a,
+.nav-dropdown button{ display: flex; align-items: center; gap: 8px; padding: 10px 16px; text-decoration: none; color: var(--text-primary); background: none; border: none; width: 100%; font-size: 0.9rem; cursor: pointer; }
+.nav-dropdown a:hover,
+.nav-dropdown button:hover { background: var(--bg-tertiary); }
+.nav-dropdown hr    { border: none; border-top: 1px solid var(--border-color); margin: 4px 0; }
+
+/* Mobile */
+.nav-hamburger      { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-primary); cursor: pointer; }
+.nav-mobile-drawer  { display: none; flex-direction: column; gap: 12px; padding: 16px; border-top: 1px solid var(--border-color); }
+.nav-mobile-drawer.open { display: flex; }
+
+@media (max-width: 768px) {
+  .nav-links        { display: none; }
+  .nav-hamburger    { display: block; }
+}
