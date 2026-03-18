@@ -122,3 +122,48 @@
     font-size: 1.2rem;
     font-weight: 600;
 }
+/* Container */
+.topics-container        { max-width: 960px; margin: 40px auto; padding: 0 16px; }
+
+/* Header */
+.topics-header           { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.topics-search-wrap      { position: relative; display: flex; align-items: center; }
+.topics-search-wrap i    { position: absolute; left: 12px; color: var(--text-secondary); pointer-events: none; }
+.topics-search-input     { padding-left: 36px !important; width: 240px; }
+
+/* Tabs */
+.topics-tabs             { display: flex; gap: 4px; border-bottom: 1px solid var(--border-color); margin-bottom: 28px; }
+.topics-tab              { background: none; border: none; padding: 10px 18px; font-size: 0.95rem; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; font-weight: 500; transition: all 0.2s; }
+.topics-tab.active       { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+.topics-tab-badge        { background: var(--accent-color); color: white; border-radius: 999px; padding: 1px 7px; font-size: 0.75rem; margin-left: 6px; }
+
+/* Topics grid */
+.topics-grid             { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+
+/* Topic card */
+.topic-card              { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; transition: all 0.2s; text-align: center; }
+.topic-card:hover        { border-color: var(--accent-color); transform: translateY(-2px); }
+.topic-card.active       { border-color: var(--accent-color); background: var(--bg-tertiary); }
+
+/* Topic icon */
+.topic-icon-wrap         { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-tertiary); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--text-secondary); transition: all 0.2s; }
+.topic-icon-wrap.followed{ background: var(--accent-color); border-color: var(--accent-color); color: white; }
+
+/* Topic text */
+.topic-name              { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+.topic-count             { font-size: 0.78rem; color: var(--text-secondary); }
+
+/* Follow button */
+.topic-follow-btn        { margin-top: 4px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border-color); background: none; color: var(--text-secondary); font-size: 0.8rem; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; text-decoration: none; }
+.topic-follow-btn:hover  { border-color: var(--accent-color); color: var(--accent-color); }
+.topic-follow-btn.following { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+
+/* Active tag highlight */
+.tag--active             { background: var(--accent-color); color: white; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .topics-grid           { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+  .topics-search-input   { width: 100%; }
+  .topics-header         { flex-direction: column; }
+}
