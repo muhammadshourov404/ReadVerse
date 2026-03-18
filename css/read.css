@@ -85,3 +85,27 @@
 .read-content li {
     margin-bottom: 10px;
 }
+/* Progress bar — fixed top */
+#read-progress-bar   { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent-color); z-index: 9999; transition: width 0.1s linear; }
+
+/* Cover image */
+.read-cover-image    { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 32px; display: block; }
+
+/* Author row */
+.read-author-avatar  { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.read-meta           { display: flex; align-items: center; gap: 14px; margin: 16px 0 24px; }
+.read-author-details { display: flex; flex-direction: column; gap: 2px; font-size: 0.9rem; }
+
+/* Tags */
+.read-tags           { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+
+/* Action buttons */
+.read-actions        { display: flex; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-color); }
+.action-btn          { display: flex; align-items: center; gap: 6px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 999px; padding: 8px 18px; font-size: 0.9rem; cursor: pointer; color: var(--text-secondary); transition: all 0.2s; }
+.action-btn:hover    { border-color: var(--accent-color); color: var(--accent-color); }
+.action-btn.active   { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+.action-btn i        { font-size: 1.1rem; }
+
+/* Skeleton & error */
+.read-skeleton       { padding: 16px 0; }
+.read-error          { text-align: center; color: var(--text-secondary); margin-top: 60px; font-size: 1.1rem; }
