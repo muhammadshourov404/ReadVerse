@@ -1,0 +1,104 @@
+/* css/write.css */
+.editor-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Title Input */
+.title-input {
+    width: 100%;
+    font-size: 2.5rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-bottom: 20px;
+}
+
+.title-input::placeholder {
+    color: #9CA3AF;
+}
+
+/* Toolbar */
+.editor-toolbar {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 70px; /* Stays visible when scrolling */
+    background: var(--bg-secondary);
+    z-index: 10;
+}
+
+.toolbar-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-btn:hover {
+    background: rgba(79, 70, 229, 0.1);
+    color: var(--accent-color);
+}
+
+/* Content Editable Area */
+.content-area {
+    min-height: 400px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    outline: none;
+    font-family: var(--font-sans);
+}
+
+.content-area[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #9CA3AF;
+    pointer-events: none;
+    display: block; /* For Firefox */
+}
+
+/* Action Buttons */
+.editor-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-publish {
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-publish:hover {
+    background: var(--accent-hover);
+}
