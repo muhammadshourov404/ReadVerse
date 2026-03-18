@@ -1,0 +1,67 @@
+/* css/home.css */
+.article-card {
+    background: var(--bg-secondary);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+}
+
+.article-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.article-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.article-title:hover {
+    color: var(--accent-color);
+}
+
+/* Limit preview text to 3 lines max */
+.article-preview {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+.read-more-btn {
+    margin-top: auto; /* Pushes the button to the bottom */
+    align-self: flex-start;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+}
+
+.read-more-btn:hover {
+    gap: 8px; /* Smooth arrow movement */
+}
