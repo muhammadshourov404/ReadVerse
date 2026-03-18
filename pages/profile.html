@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - ReadVerse</title>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css"> 
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        
+        <div class="profile-header" id="dynamic-profile-header">
+            <div class="skeleton" style="width: 120px; height: 120px; border-radius: 50%; flex-shrink: 0;"></div>
+            <div class="profile-info" style="width: 100%;">
+                <div class="skeleton" style="height: 35px; width: 250px; margin-bottom: 10px;"></div>
+                <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 5px;"></div>
+                <div class="skeleton" style="height: 20px; width: 60%; margin-bottom: 15px;"></div>
+                <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                    <div class="skeleton" style="height: 20px; width: 60px;"></div>
+                    <div class="skeleton" style="height: 20px; width: 60px;"></div>
+                    <div class="skeleton" style="height: 20px; width: 60px;"></div>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <div class="skeleton" style="height: 40px; width: 120px; border-radius: 30px;"></div>
+                    <div class="skeleton" style="height: 40px; width: 100px; border-radius: 30px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;">
+            <i class="ph ph-files"></i> Latest Articles
+        </h3>
+        
+        <div id="user-articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px;">
+            
+            <div class="article-card" style="pointer-events: none; border-color: transparent;">
+                <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
+                <div class="skeleton" style="height: 28px; width: 90%; margin-bottom: 10px;"></div>
+                <div class="skeleton" style="height: 60px; width: 100%; margin-bottom: 15px;"></div>
+                <div class="skeleton" style="height: 20px; width: 30%; margin-top: auto;"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/components.js"></script>
+    <script type="module" src="../js/profile.js"></script>
+</body>
+</html>
